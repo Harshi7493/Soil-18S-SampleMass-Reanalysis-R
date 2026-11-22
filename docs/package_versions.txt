@@ -1,0 +1,13 @@
+R version 4.4.1 (2024-06-14 ucrt)
+
+here	1.0.2
+tidyverse	2.0.0
+vegan	2.7.2
+metafor	4.8.0
+iNEXT	3.0.2
+broom	1.0.12
+dada2	1.32.0
+ShortRead	1.62.0
+Biostrings	2.72.1
+phyloseq	1.48.0
+microbiome	1.26.0
