@@ -97,3 +97,53 @@ stopifnot(nrow(samples) == 80,
 # The authors' SRR mapping must agree with ENA's
 stopifnot(all(samples$run_accession %in% runinfo$run_accession))
 message("Sample sheet OK: 80 samples, 40 in the paper.")
+
+
+
+
+
+# --- 4. Download FASTQ files (forward + reverse) with MD5 check -----------------
+library(here)
+library(tidyverse)
+meta_dir <- here("data", "metadata")
+runinfo  <- read_tsv(file.path(meta_dir, "ena_runinfo.tsv"), show_col_types = FALSE)
+
+
+options(timeout = 3600)                       # allow slow downloads
+raw_dir <- here("data", "raw")
+dir.create(raw_dir, recursive = TRUE, showWarnings = FALSE)
+
+files <- runinfo %>%
+  select(run_accession, fastq_ftp, fastq_md5) %>%
+  separate_rows(fastq_ftp, fastq_md5, sep = ";") %>%
+  mutate(url  = paste0("https://", fastq_ftp),
+         dest = file.path(raw_dir, basename(fastq_ftp)))
+
+is_ok <- function(path, md5) file.exists(path) && unname(tools::md5sum(path)) == md5
+
+# Download order: paper samples first, "small" samples last
+samples <- read_tsv(file.path(meta_dir, "samples.tsv"), show_col_types = FALSE)
+
+todo <- files %>%
+  left_join(select(samples, run_accession, extraction), by = "run_accession") %>%
+  mutate(priority = match(extraction, c("single", "split_pooled", "aliquot_8g", "small"))) %>%
+  arrange(priority) %>%
+  filter(!mapply(is_ok, dest, fastq_md5))       # skip files already complete
+
+message(nrow(todo), " files still to download")
+
+# One file at a time (the server blocks parallel downloads), up to 3 tries each
+for (i in seq_len(nrow(todo))) {
+  message(sprintf("[%d/%d] %s", i, nrow(todo), basename(todo$dest[i])))
+  for (attempt in 1:3) {
+    try(download.file(todo$url[i], todo$dest[i], mode = "wb", quiet = TRUE))
+    if (is_ok(todo$dest[i], todo$fastq_md5[i])) break
+    Sys.sleep(30)                 # wait before retrying
+  }
+  Sys.sleep(2)                    # short pause between files
+}
+
+# --- Check ----------------------------------------------------------------------
+files$ok <- mapply(is_ok, files$dest, files$fastq_md5)
+table(files$ok)                     # want: TRUE 160
+files %>% filter(!ok) %>% pull(dest) %>% basename()
