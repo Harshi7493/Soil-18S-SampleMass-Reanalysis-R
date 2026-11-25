@@ -1,0 +1,249 @@
+This is cutadapt 5.2 with Python 3.13.7
+Command line parameters: -a ^GTACACACCGCCCGTC...GTAGGTGAACCTGCAGAAGGATCA -A ^TGATCCTTCTGCAGGTTCACCTAC...GACGGGCGGTGTGTAC --discard-untrimmed --minimum-length 50 -o C:/Users/Harshi/Documents/Soil-18S-SampleMass-Reanalysis-R/data/trimmed/SRR36035528_1.fastq.gz -p C:/Users/Harshi/Documents/Soil-18S-SampleMass-Reanalysis-R/data/trimmed/SRR36035528_2.fastq.gz C:/Users/Harshi/Documents/Soil-18S-SampleMass-Reanalysis-R/data/raw/SRR36035528_1.fastq.gz C:/Users/Harshi/Documents/Soil-18S-SampleMass-Reanalysis-R/data/raw/SRR36035528_2.fastq.gz
+Processing paired-end reads on 1 core ...
+
+=== Summary ===
+
+Total read pairs processed:             34,254
+  Read 1 with adapter:                  34,136 (99.7%)
+  Read 2 with adapter:                  32,648 (95.3%)
+
+== Read fate breakdown ==
+Pairs that were too short:                   3 (0.0%)
+Pairs discarded as untrimmed:            1,692 (4.9%)
+Pairs written (passing filters):        32,559 (95.1%)
+
+Total basepairs processed:    12,438,676 bp
+  Read 1:     6,326,605 bp
+  Read 2:     6,112,071 bp
+Total written (filtered):      8,067,631 bp (64.9%)
+  Read 1:     3,999,099 bp
+  Read 2:     4,068,532 bp
+
+=== First read: Adapter 1 ===
+
+Sequence: GTACACACCGCCCGTC...GTAGGTGAACCTGCAGAAGGATCA; Type: linked; Length: 16+24; 5' trimmed: 34136 times; 3' trimmed: 32741 times
+
+Minimum overlap: 16+3
+No. of allowed errors: 1
+
+No. of allowed errors:
+1-9 bp: 0; 10-19 bp: 1; 20-24 bp: 2
+
+Overview of removed sequences at 5' end
+length	count	expect	max.err	error counts
+15	136	0.0	1	0 136
+16	33981	0.0	1	33120 861
+17	19	0.0	1	0 19
+
+
+
+Overview of removed sequences at 3' end
+length	count	expect	max.err	error counts
+3	30	535.2	0	30
+4	3	133.8	0	3
+5	1	33.5	0	1
+15	1	0.0	1	1
+19	4	0.0	1	1 3
+20	4	0.0	2	2 1 1
+21	3	0.0	2	2 0 1
+22	41	0.0	2	5 9 27
+23	825	0.0	2	111 650 64
+24	26380	0.0	2	23779 2166 435
+25	38	0.0	2	5 31 2
+26	1	0.0	2	0 1
+73	1	0.0	2	0 0 1
+103	1	0.0	2	1
+110	1	0.0	2	0 1
+114	1	0.0	2	0 1
+116	1	0.0	2	1
+117	2	0.0	2	1 1
+118	5	0.0	2	4 0 1
+119	2	0.0	2	1 1
+120	2	0.0	2	1 1
+124	2	0.0	2	2
+125	2	0.0	2	2
+126	1	0.0	2	0 0 1
+127	1	0.0	2	0 0 1
+129	1	0.0	2	1
+131	1	0.0	2	1
+133	1	0.0	2	1
+134	2	0.0	2	2
+135	1	0.0	2	1
+136	2	0.0	2	1 1
+137	10	0.0	2	9 0 1
+138	10	0.0	2	5 3 2
+140	1	0.0	2	1
+141	5	0.0	2	5
+142	3	0.0	2	1 1 1
+143	5	0.0	2	2 3
+144	5	0.0	2	1 3 1
+145	8	0.0	2	6 1 1
+146	13	0.0	2	9 4
+147	16	0.0	2	11 3 2
+148	34	0.0	2	30 3 1
+149	21	0.0	2	16 3 2
+150	42	0.0	2	30 9 3
+151	68	0.0	2	56 8 4
+152	145	0.0	2	111 22 12
+153	391	0.0	2	306 56 29
+154	684	0.0	2	522 102 60
+155	332	0.0	2	263 46 23
+156	614	0.0	2	471 101 42
+157	140	0.0	2	110 18 12
+158	123	0.0	2	99 18 6
+159	52	0.0	2	42 8 2
+160	25	0.0	2	20 3 2
+161	15	0.0	2	13 1 1
+162	27	0.0	2	24 2 1
+163	7	0.0	2	5 1 1
+164	33	0.0	2	27 3 3
+165	56	0.0	2	40 10 6
+166	5	0.0	2	3 0 2
+167	6	0.0	2	3 2 1
+168	8	0.0	2	7 1
+169	3	0.0	2	1 2
+170	7	0.0	2	5 1 1
+171	5	0.0	2	5
+172	6	0.0	2	5 1
+173	7	0.0	2	6 1
+174	3	0.0	2	3
+175	4	0.0	2	3 1
+176	10	0.0	2	6 2 2
+177	31	0.0	2	25 4 2
+178	80	0.0	2	63 13 4
+179	254	0.0	2	197 48 9
+180	490	0.0	2	389 71 30
+181	336	0.0	2	255 63 18
+182	543	0.0	2	412 90 41
+183	73	0.0	2	59 7 7
+184	30	0.0	2	20 6 4
+185	5	0.0	2	2 2 1
+186	19	0.0	2	13 4 2
+187	16	0.0	2	11 4 1
+188	16	0.0	2	13 1 2
+189	2	0.0	2	2
+190	17	0.0	2	16 1
+191	71	0.0	2	56 9 6
+192	157	0.0	2	122 27 8
+193	38	0.0	2	31 4 3
+194	26	0.0	2	21 2 3
+195	44	0.0	2	35 5 4
+196	89	0.0	2	75 11 3
+197	15	0.0	2	12 3
+198	45	0.0	2	37 8
+199	15	0.0	2	10 3 2
+200	18	0.0	2	15 3
+255	1	0.0	2	1
+
+
+=== Second read: Adapter 2 ===
+
+Sequence: TGATCCTTCTGCAGGTTCACCTAC...GACGGGCGGTGTGTAC; Type: linked; Length: 24+16; 5' trimmed: 32648 times; 3' trimmed: 30546 times
+
+Minimum overlap: 24+3
+No. of allowed errors: 2
+
+No. of allowed errors:
+1-9 bp: 0; 10-16 bp: 1
+
+Overview of removed sequences at 5' end
+length	count	expect	max.err	error counts
+22	46	0.0	2	0 0 46
+23	923	0.0	2	0 819 104
+24	31635	0.0	2	29056 2327 252
+25	43	0.0	2	0 40 3
+26	1	0.0	2	0 0 1
+
+
+
+Overview of removed sequences at 3' end
+length	count	expect	max.err	error counts
+3	31	535.2	0	31
+4	6	133.8	0	6
+8	1	0.5	0	1
+9	1	0.1	0	1
+10	4	0.0	1	2 2
+11	1	0.0	1	0 1
+12	2	0.0	1	2
+13	3	0.0	1	3
+14	1	0.0	1	1
+15	117	0.0	1	19 98
+16	28180	0.0	1	26106 2074
+17	43	0.0	1	4 39
+29	1	0.0	1	1
+35	1	0.0	1	1
+107	1	0.0	1	0 1
+108	1	0.0	1	1
+110	1	0.0	1	1
+115	1	0.0	1	1
+117	2	0.0	1	2
+121	1	0.0	1	0 1
+125	1	0.0	1	1
+126	1	0.0	1	1
+127	1	0.0	1	0 1
+128	3	0.0	1	2 1
+129	2	0.0	1	1 1
+130	4	0.0	1	2 2
+132	1	0.0	1	1
+133	4	0.0	1	2 2
+134	2	0.0	1	1 1
+135	2	0.0	1	1 1
+136	2	0.0	1	2
+137	3	0.0	1	2 1
+138	6	0.0	1	4 2
+139	8	0.0	1	3 5
+140	12	0.0	1	8 4
+141	15	0.0	1	9 6
+142	30	0.0	1	17 13
+143	25	0.0	1	17 8
+144	67	0.0	1	43 24
+145	172	0.0	1	125 47
+146	298	0.0	1	217 81
+147	143	0.0	1	106 37
+148	243	0.0	1	187 56
+149	71	0.0	1	51 20
+150	48	0.0	1	37 11
+151	23	0.0	1	19 4
+152	14	0.0	1	11 3
+153	8	0.0	1	6 2
+154	10	0.0	1	6 4
+155	6	0.0	1	5 1
+156	16	0.0	1	11 5
+157	37	0.0	1	25 12
+158	5	0.0	1	3 2
+159	5	0.0	1	3 2
+160	4	0.0	1	3 1
+161	1	0.0	1	1
+162	2	0.0	1	2
+163	2	0.0	1	2
+164	7	0.0	1	5 2
+165	1	0.0	1	0 1
+166	1	0.0	1	1
+167	2	0.0	1	2
+168	1	0.0	1	1
+169	8	0.0	1	5 3
+170	28	0.0	1	20 8
+171	89	0.0	1	64 25
+172	171	0.0	1	142 29
+173	113	0.0	1	96 17
+174	197	0.0	1	154 43
+175	32	0.0	1	24 8
+176	13	0.0	1	8 5
+177	2	0.0	1	1 1
+178	8	0.0	1	5 3
+179	10	0.0	1	8 2
+180	7	0.0	1	5 2
+181	3	0.0	1	3
+182	3	0.0	1	3
+183	27	0.0	1	21 6
+184	40	0.0	1	33 7
+185	13	0.0	1	11 2
+186	12	0.0	1	11 1
+187	15	0.0	1	13 2
+188	30	0.0	1	22 8
+189	3	0.0	1	2 1
+190	6	0.0	1	6
+191	2	0.0	1	1 1
+192	5	0.0	1	2 3
+193	1	0.0	1	1
